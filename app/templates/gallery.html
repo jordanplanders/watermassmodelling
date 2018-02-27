@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h1>Hello, {{ user.username }}!</h1>
+        <h2>Welcome to the webapp edition of ODV!</h2>
+        {% for post in posts %}
+        <div><p>{{post.tracer.tracername }}: <b>{{ post.body }}</b><img src={{ post.img }} alt=post.tracer.tracername width=500</p></div>
+        {% endfor %}
+{% endblock %}

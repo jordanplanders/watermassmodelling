@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Plot Form</h1>
+    <form action = "http://localhost:5000/plots" method="post">
+        {{ form.hidden_tag() }}
+        <h3>Trajectory Type</h3>
+        {% for subfield in form.plot_type %}
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label }}</td>
+            {% endfor %}
+        <table style="width:100%">
+          <tr><td>
+            <img src= {{ url_for('static', filename='world_map.png') }} alt="World Map" width=500>
+        </td>
+            <td> 
+            <p>
+            {{ form.lat_n.label }}: {{ form.lat_n }}<br>
+            {{ form.lat_s.label }}: {{ form.lat_s }}<br>
+            <p> <b>{{form.lat_n.label}} should equal {{ form.lat_s.label }} for East-West Sections </b></p> <br><br>
+            {{ form.lon_w.label }}: {{ form.lon_w }}<br>
+            {{ form.lon_e.label }}: {{ form.lon_e }}<br>
+            <p> <b>{{form.lon_w.label}} should equal {{ form.lon_e.label }} for North-South Sections</b> </p> <br><br>
+            {{ form.depth.label }}: {{ form.depth }}
+            <p> <b>{{form.depth.label}} need only be specified for for Constant-Depth Slices </b></p><br>
+        </p>
+        </td></tr>
+    </table>
+        
+        <h3> Plot Type </h3>
+            {% for subfield in form.raw_model %}
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label }}</td>
+            {% endfor %}
+ <table style="width:100%">
+        <tr><th>
+            <p>
+            {{ form.model_opts.label }}: {{ form.model_opts }}
+        </p>
+        </th>
+        <th>{{ form.sil_coef.label }}: {{ form.sil_coef }}
+        </th>
+        </tr>
+        <br>
+        <tr><th>
+            <p>
+            {{ form.tracer.label }}: {{ form.tracer }}
+            </p>
+        </th></tr>
+        </table>
+        
+
+        
+        
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

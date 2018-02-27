@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--		<div><p><img src= "data:image/png;base64, {{ plot_url }}" alt='_map_fig' width=500</p></div> -->
+        {% for post in posts %}
+        <div><p>{{post.tracer }}: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+        <img src= "data:image/png;base64, {{ plot_url2 }}" alt=post.tracer.tracername width=500>
+{% endblock %}
+<!--         <h2>Welcome to the webapp edition of ODV!</h2>
+        <div><p>{{form.tracer.data }}: <b>{{ form.plot_type.data }}</b></p></div> -->
