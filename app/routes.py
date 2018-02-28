@@ -1,9 +1,9 @@
 from flask import render_template, flash, redirect, url_for, request
-from app import app, db, cache
+from app import app, db#, cache
 from app.forms import LoginForm, PlotForm, RegistrationForm
 from flask_login import logout_user, login_user, login_required, current_user
 from app.models import User
-from flask_googlemaps import GoogleMaps, Map
+# from flask_googlemaps import GoogleMaps, Map
 from werkzeug.urls import url_parse
 
 from chem_ocean import Build_Map as bm

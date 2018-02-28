@@ -17,6 +17,10 @@ from mpl_toolkits.basemap import Basemap, shiftgrid
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
+import matplotlib as mpl
+
+mpl.use('agg')
+
 title_sz = 27
 axis_sz = 22
 tick_sz = 21

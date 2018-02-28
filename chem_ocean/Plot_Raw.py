@@ -1,4 +1,4 @@
-from app import app, db, cache
+from app import app, db#, cache
 import sqlite3
 
 from matplotlib.mlab import griddata
@@ -33,6 +33,10 @@ import matplotlib.cm as cm
 from matplotlib import gridspec
 
 import pylab as pl
+
+import matplotlib as mpl
+
+mpl.use('agg')
 
 # from sklearn import cluster, metrics
 # from sklearn.metrics import euclidean_distances, silhouette_samples, silhouette_score

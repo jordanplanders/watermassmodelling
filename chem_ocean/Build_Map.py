@@ -29,8 +29,9 @@ from mpl_toolkits.basemap import Basemap
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
-import matplotlib.pyplot as plt
+import matplotlib as mpl
 
+mpl.use('agg')
 
 title_sz = 27
 axis_sz = 22
